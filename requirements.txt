@@ -3,3 +3,7 @@ vk_api==11.9.9
 yandex_music==2.1.1
 telebot== 0.0.5
 bs4
+waiting
+logging
+os
+threading
