@@ -6,6 +6,7 @@ import os
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth, SpotifyOauthError
 from yandex_music.exceptions import UnauthorizedError
+import bs4
 import vk_api
 from vk_api.audio import VkAudio
 import spotify
