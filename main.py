@@ -14,7 +14,7 @@ import vkapi
 import logging
 import waiting
 
-bot = telebot.TeleBot('None')
+bot = telebot.TeleBot('6927922735:AAHt-rBe92ea-w9tXTv7V8E5ExtpV-nu5Fs')
 yandex_token = None
 spotify_code = None
 sp = None
