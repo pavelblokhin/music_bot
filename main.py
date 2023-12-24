@@ -58,25 +58,8 @@ def main(message):
         instruction = yandexapi.instruct()
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
         markup.row('В главное меню')
-        if yandex_token:
-            try:
-                markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=4)
-                item_1 = types.KeyboardButton("Создать Yandex плейлист")
-                item_2 = types.KeyboardButton("Получить список песен")
-                item_3 = types.KeyboardButton("Перенести в Spotify")
-                item_4 = types.KeyboardButton("В главное меню")
-                markup.add(item_1, item_2, item_3, item_4)
-                Client(yandex_token).init()
-                bot.send_message(message.chat.id, f'Ты уже вошел в аккаунт\n'
-                                                  f'Что ты хочешь сделать?'
-                                 ,reply_markup=markup )
-                bot.register_next_step_handler(message, yandex_commands)
-            except UnauthorizedError:
-                bot.send_message(message.chat.id, instruction, parse_mode='Markdown', reply_markup=markup)
-                bot.register_next_step_handler(message, yandex_reg)
-        else:
-            bot.send_message(message.chat.id, instruction, parse_mode='Markdown', reply_markup=markup)
-            bot.register_next_step_handler(message, yandex_reg)
+        bot.send_message(message.chat.id, instruction, parse_mode='Markdown', reply_markup=markup)
+        bot.register_next_step_handler(message, yandex_reg)
 
     elif message.text == 'Spotify':
         auth_manager, instruction = spotify.login_inst()
