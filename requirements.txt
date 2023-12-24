@@ -1,9 +1,7 @@
-spotipy==2.23.0
-vk_api==11.9.9
-yandex_music==2.1.1
-telebot== 0.0.5
+spotipy
+vk_api
+yandex_music
+telebot
 bs4
 waiting
 logging
-os
-threading
